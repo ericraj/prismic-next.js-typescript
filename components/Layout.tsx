@@ -1,41 +1,50 @@
-import React, { ReactNode } from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
+import { css, Global } from "@emotion/react";
+import Head from "next/head";
+import React, { FC, Fragment, ReactNode } from "react";
+import { Container } from "../styled-components";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 
-type Props = {
-  children?: ReactNode
-  title?: string
+interface LayoutProps {
+  children?: ReactNode;
+  title?: string;
 }
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <div>
-    <Head>
-      <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{' '}
-        | <a href="/api/users">Users API</a>
-      </nav>
-    </header>
-    {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
-  </div>
-)
+const Layout: FC<LayoutProps> = ({ children, title = "Le Blog" }) => {
+  return (
+    <Fragment>
+      <Global
+        styles={css`
+          *,
+          *::after,
+          *::before {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: "Montserrat";
+            font-weight: 500;
+            font-size: 16px;
+          }
+          body {
+            min-height: 100vh;
+          }
+        `}
+      />
+      <Head>
+        <title>{title}</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,300&display=swap"
+        />
+      </Head>
+      <Navbar />
+      <Container>{children}</Container>
+      <Footer />
+    </Fragment>
+  );
+};
 
-export default Layout
+export default Layout;
