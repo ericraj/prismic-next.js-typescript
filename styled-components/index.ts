@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import Image from "./Image";
 import Nav from "./Nav";
+import Typography from "./Typography";
 
 export {
   Brand,
@@ -18,4 +19,5 @@ export {
   Header,
   Image,
   Nav,
+  Typography,
 };
