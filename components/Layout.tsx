@@ -28,6 +28,11 @@ const Layout: FC<LayoutProps> = ({ children, title = "Le Blog" }) => {
           body {
             min-height: 100vh;
           }
+          #__next {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
         `}
       />
       <Head>

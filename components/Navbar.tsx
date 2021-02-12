@@ -31,14 +31,16 @@ const Navbar: FC<NavbarProps> = ({
 
   return (
     <Header>
-      <Brand onClick={goToHome}>{brand}</Brand>
-      <Nav>
-        {links.map((link, index) => (
-          <Link key={index} href={link.href}>
-            <a>{link.label}</a>
-          </Link>
-        ))}
-      </Nav>
+      <div>
+        <Brand onClick={goToHome}>{brand}</Brand>
+        <Nav>
+          {links.map((link, index) => (
+            <Link key={index} href={link.href}>
+              <a>{link.label}</a>
+            </Link>
+          ))}
+        </Nav>
+      </div>
     </Header>
   );
 };

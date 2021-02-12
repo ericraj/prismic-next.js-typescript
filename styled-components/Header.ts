@@ -1,16 +1,26 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import { primary, white } from "../constants/colors";
 
-const Header = styled.header`
-  color: ${white};
-  background-color: ${primary};
+const flex = () => css`
   width: 100%;
-  height: 85px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 30px;
+`;
+
+const Header = styled.header`
+  ${flex};
+  justify-content: center;
+  color: ${white};
+  background-color: ${primary};
+  & > div {
+    ${flex};
+    justify-content: space-between;
+    max-width: 1366px;
+    height: 85px;
+    padding: 0 30px;
+  }
 `;
 
 export default Header;
