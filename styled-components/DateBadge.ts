@@ -17,7 +17,7 @@ const DateBadge = styled.div`
   & * {
     font-size: 20px;
   }
-  & span:nth-child(2) {
+  & span:nth-of-type(2) {
     font-size: 14px;
   }
 `;

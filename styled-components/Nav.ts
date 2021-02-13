@@ -11,7 +11,7 @@ const Nav = styled.nav`
     text-decoration: underline;
   }
 
-  & > a:not(:nth-child(1)) {
+  & > a:not(:nth-of-type(1)) {
     margin-left: 15px;
   }
 `;
