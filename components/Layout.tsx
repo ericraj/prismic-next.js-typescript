@@ -26,6 +26,7 @@ const Layout: FC<LayoutProps> = ({ children, title = "Le Blog" }) => {
             font-size: 16px;
           }
           body {
+            width: 100%;
             min-height: 100vh;
           }
           #__next {
@@ -43,6 +44,10 @@ const Layout: FC<LayoutProps> = ({ children, title = "Le Blog" }) => {
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,300&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap"
         />
       </Head>
       <Navbar />

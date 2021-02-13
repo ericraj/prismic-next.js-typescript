@@ -9,6 +9,7 @@ const Footer = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 `;
 
 export default Footer;

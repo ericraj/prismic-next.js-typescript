@@ -14,6 +14,7 @@ const Button = styled.button((props: ButtonProps) => ({
   backgroundColor: props.backgroundColor || secondary,
   minWidth: props.minWidth || 152,
   height: props.height || 38,
+  minHeight: props.height || 38,
   fontSize: props.fontSize || 14,
   border: "none",
   borderRadius: 5,

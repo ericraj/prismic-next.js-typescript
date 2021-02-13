@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { FC } from "react";
 import { Brand, Header, Nav } from "../styled-components";
-import { useRouter } from "next/router";
 
 interface NavbarLink {
   label: string;
@@ -14,25 +13,23 @@ interface NavbarProps {
 }
 
 const defaultLinks: NavbarLink[] = [
-  { label: "Voir les catégories", href: "/categories" },
+  { label: "Voir les catégories", href: "/" },
 ];
 
 const Navbar: FC<NavbarProps> = ({
   brand = "Le Blog",
   links: linksFromProps,
 }) => {
-  const router = useRouter();
-
   const links = linksFromProps
     ? [...defaultLinks, ...linksFromProps]
     : defaultLinks;
 
-  const goToHome = () => router.push("/");
-
   return (
     <Header>
       <div>
-        <Brand onClick={goToHome}>{brand}</Brand>
+        <Link href="/">
+          <Brand>{brand}</Brand>
+        </Link>
         <Nav>
           {links.map((link, index) => (
             <Link key={index} href={link.href}>
