@@ -16,6 +16,7 @@ const ArticleItemContainer = styled.div`
 const ArticleTitle = styled(Typography)`
   margin-top: 20px;
   cursor: pointer;
+  max-width: 360px;
   &:hover {
     text-decoration: underline;
   }
