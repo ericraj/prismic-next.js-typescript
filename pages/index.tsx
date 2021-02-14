@@ -23,7 +23,7 @@ const Index: FC<IndexProps> = ({ categories }) => {
   return (
     <Layout title="Home | Le Blog">
       <Title>
-        Ceci est un blog simple réalisé avec Prismic, Next.js et TypeScript
+        Ceci est un simple blog réalisé avec Prismic, Next.js et TypeScript
       </Title>
       <CategoryList categories={categories.results} />
       <CardForm />

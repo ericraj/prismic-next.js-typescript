@@ -78,7 +78,7 @@ const CardForm = () => {
           <Input
             type="number"
             value={zipCode}
-            placeholder="Enter votre code postal"
+            placeholder="Entrer votre code postal"
             onChange={(e) => setZipCode(e.target.value)}
           />
           <Btn onClick={handleValidate}>Valider</Btn>
