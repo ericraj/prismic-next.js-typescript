@@ -5,8 +5,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <span>
-        {new Date().getFullYear()} Permettez-moi de construire. Tous droits
-        réservés.
+        &copy; {new Date().getFullYear()} ericraj. Tous droits réservés.
       </span>
     </StyledFooter>
   );
