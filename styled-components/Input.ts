@@ -1,23 +1,24 @@
 import styled from "@emotion/styled";
-import { primary } from "../constants/colors";
 
 interface InputProps {
-  width?: number | string;
-  height?: number | string;
-  padding?: number | string;
-  borderColor?: string;
+  width?: number;
+  height?: number;
 }
 
-const Input = styled.input((props: InputProps) => ({
-  width: props.width || 305,
-  height: props.height || 45,
-  minHeight: props.height || 45,
-  padding: props.padding || "0px 10px",
-  border: `1px solid${props.borderColor || primary}`,
-  borderRadius: 5,
-  "&:focus": {
-    outlineColor: props.borderColor || primary,
-  },
-}));
+const Input = styled.input<InputProps>`
+  width: ${({ width }) => width ?? 305}px;
+  height: ${({ height }) => height ?? 45}px;
+  min-height: ${({ height }) => height ?? 45}px;
+  padding: 0 10px;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  border-radius: 5px;
+  &:focus {
+    outline-color: ${({ theme }) => theme.colors.primary};
+  }
+
+  @media (max-width: 350px) {
+    width: 100%;
+  }
+`;
 
 export default Input;

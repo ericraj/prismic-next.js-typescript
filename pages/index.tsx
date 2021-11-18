@@ -17,14 +17,20 @@ const Title = styled(Typography)`
   font-weight: 700;
   text-align: center;
   margin-bottom: 45px;
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 20px;
+  }
 `;
 
 const Index: FC<IndexProps> = ({ categories }) => {
   return (
     <Layout title="Home | Le Blog">
-      <Title>
-        Ceci est un simple blog réalisé avec Prismic, Next.js et TypeScript
-      </Title>
+      <Title>Ceci est un simple blog réalisé avec Prismic, Next.js et TypeScript</Title>
       <CategoryList categories={categories.results} />
       <CardForm />
     </Layout>
@@ -35,8 +41,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const categories = await fetchCategoriesWithArticles(3);
   return {
     props: {
-      categories: categories,
-    },
+      categories: categories
+    }
   };
 };
 

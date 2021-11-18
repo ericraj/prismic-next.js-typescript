@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
-import { primary, white } from "../constants/colors";
 
 const Footer = styled.footer`
-  color: ${white};
-  background-color: ${primary};
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.primary};
   width: 100%;
   height: 85px;
   display: flex;

@@ -1,6 +1,5 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import { primary, white } from "../constants/colors";
 
 const flex = () => css`
   width: 100%;
@@ -12,14 +11,17 @@ const flex = () => css`
 const Header = styled.header`
   ${flex};
   justify-content: center;
-  color: ${white};
-  background-color: ${primary};
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.primary};
   & > div {
     ${flex};
     justify-content: space-between;
     max-width: 1366px;
     height: 85px;
     padding: 0 30px;
+    @media (max-width: 1365px) {
+      max-width: 100vw;
+    }
   }
 `;
 

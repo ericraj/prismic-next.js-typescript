@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { primary, white } from "../constants/colors";
 
 const DateBadge = styled.div`
   position: absolute;
@@ -11,8 +10,8 @@ const DateBadge = styled.div`
   justify-content: center;
   width: 43px;
   height: 49px;
-  color: ${white};
-  background-color: ${primary};
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 3px;
   & * {
     font-size: 20px;

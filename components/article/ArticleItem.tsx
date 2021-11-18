@@ -20,6 +20,9 @@ const ArticleTitle = styled(Typography)`
   &:hover {
     text-decoration: underline;
   }
+  @media (max-width: 359px) {
+    max-width: 100vw;
+  }
 `;
 
 const ArticleItem: FC<ArticleItemProps> = ({ article: a }) => {

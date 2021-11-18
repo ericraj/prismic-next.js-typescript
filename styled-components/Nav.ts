@@ -1,10 +1,9 @@
 import styled from "@emotion/styled";
-import { white } from "../constants/colors";
 
 const Nav = styled.nav`
   & > a {
     text-decoration: none;
-    color: ${white};
+    color: ${({ theme }) => theme.colors.white};
   }
 
   & > a:hover {

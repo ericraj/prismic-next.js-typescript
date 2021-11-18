@@ -1,13 +1,16 @@
 import styled from "@emotion/styled";
-import { ImageProps } from "../components/Image";
 
-const Image = styled.img((props: ImageProps) => {
-  const isSmall = props.variant === "small";
-  const isLarge = props.variant === "large";
-  return {
-    width: isSmall ? 180 : isLarge ? 603 : 360,
-    height: isSmall ? 95 : isLarge ? 318 : 190,
-  };
-});
+export interface StyledImageProps {
+  variant?: "small" | "medium" | "large";
+}
+
+const Image = styled.div<StyledImageProps>`
+  width: ${({ variant }) => (variant === "small" ? 180 : variant === "large" ? 603 : 360)}px;
+  height: ${({ variant }) => (variant === "small" ? 95 : variant === "large" ? 318 : 190)}px;
+
+  @media (max-width: 400px) {
+    width: 100%;
+  }
+`;
 
 export default Image;

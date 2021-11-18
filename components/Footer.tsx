@@ -4,9 +4,7 @@ import { Footer as StyledFooter } from "../styled-components";
 const Footer = () => {
   return (
     <StyledFooter>
-      <span>
-        &copy; {new Date().getFullYear()} ericraj. Tous droits réservés.
-      </span>
+      <span>&copy; {new Date().getFullYear()} Eric Rajaonarison. Tous droits réservés !</span>
     </StyledFooter>
   );
 };

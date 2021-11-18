@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import React, { Fragment, useState } from "react";
-import { primary, secondary } from "../constants/colors";
 import { Button, Card, Input, Typography } from "../styled-components";
 
 const StyledCard = styled(Card)`
@@ -13,8 +12,9 @@ const StyledCard = styled(Card)`
 `;
 
 const Title = styled(Typography)`
-  color: ${primary};
+  color: ${({ theme }) => theme.colors.primary};
   margin-bottom: 39px;
+  text-align: center;
 `;
 
 const Btn = styled(Button)`
@@ -22,12 +22,12 @@ const Btn = styled(Button)`
 `;
 
 const Error = styled(Typography)`
-  color: ${secondary};
+  color: ${({ theme }) => theme.colors.secondary};
   margin-bottom: 10px;
 `;
 
 const Loading = styled(Typography)`
-  color: ${primary};
+  color: ${({ theme }) => theme.colors.primary};
   margin-bottom: 10px;
 `;
 
@@ -41,9 +41,7 @@ const CardForm = () => {
     if (zipCode) {
       setLoading(true);
       setError("");
-      fetch(
-        `${process.env.NEXT_PUBLIC_API_CARTO_URL}/codes-postaux/communes/${zipCode}`
-      )
+      fetch(`${process.env.NEXT_PUBLIC_API_CARTO_URL}/codes-postaux/communes/${zipCode}`)
         .then((res) => res.json())
         .then((data) => {
           setLoading(false);
@@ -63,9 +61,7 @@ const CardForm = () => {
 
   return (
     <StyledCard>
-      <Title variant="xl">
-        Recevez les règles d’urbanisme pour votre ville !
-      </Title>
+      <Title variant="xl">Recevez les règles d’urbanisme pour votre ville !</Title>
       {loading && <Loading variant="sm">Chargement en cours...</Loading>}
       {error && <Error variant="sm">{error}</Error>}
       {city ? (

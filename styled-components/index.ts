@@ -9,6 +9,7 @@ import Image from "./Image";
 import Input from "./Input";
 import Nav from "./Nav";
 import Typography from "./Typography";
+import CategoryItemContainer from "./CategoryItemContainer";
 
 export {
   Brand,
@@ -22,4 +23,5 @@ export {
   Input,
   Nav,
   Typography,
+  CategoryItemContainer
 };

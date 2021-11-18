@@ -13,6 +13,10 @@ const ArticleListContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @media (max-width: 889px) {
+    flex-direction: column;
+  }
 `;
 
 const ArticleList: FC<ArticleListProps> = ({ articles }) => {
